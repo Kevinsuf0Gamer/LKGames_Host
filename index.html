@@ -1,0 +1,148 @@
+<html manifest="kevinsuf0gamer.cache">
+    
+<head>
+    <title>LKGames_Host</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body 
+        {
+            background-image: url("bg.jpg");
+            height: 80%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .loader 
+        {
+           position: absolute;
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%,-50%);
+           width: 150px;
+           height: 150px;
+           background: transparent;
+           border: 3px solid #3c3c3c;
+           border-radius: 50%;
+           text-align: center;
+           line-height: 150px;
+           font-family: sans-serif;
+           font-size: 20px;
+           color: #fff000;
+           letter-spacing: 4px;
+           text-shadow: 0 0 10px #fff000;
+           box-shadow: 0 0 20px rgba(0,0,0,.5);
+        }
+
+        .ring:before {
+            content:'';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid transparent;
+            border-top: 3px solid #fff000;
+            border-right: 3px solid #fff000;
+            border-radius: 50%;
+            animation:animateC 2s linear infinite;
+        }
+
+        span {
+            display: block;
+            position: absolute;
+            top:calc(50% - 2px);
+            left: 50%;
+            width: 50%;
+            height: 4px;
+            background: transparent;
+            transform-origin: left;
+            animation:animate 2s linear infinite;
+        }
+
+        span:before{
+            content:'';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #fff000;
+            top: -6px;
+            right: -8px;
+            box-shadow: 0 0 20px #fff000;
+        }
+
+        @keyframes animateC {
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes animate {
+            0%{
+            transform: rotate(45deg);
+            }
+            100%{
+                transform: rotate(405deg);
+            }
+        }
+
+        @keyframes spin 
+        {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .info 
+        {
+            overflow: hidden;
+            position: fixed;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            font-size: 45px;
+            font-family: sans-serif;
+            color: #d40606;
+
+            transform: translate(-50%, -50%);
+        }
+
+        .j {
+            font-size: 15px;
+            color: #d40606;
+        }
+    </style>
+     
+     <script>
+        window.applicationCache.ondownloading=function(){document.getElementById("progress").innerHTML="Cache de host iniciado!!";};
+        window.applicationCache.onprogress=function(a){document.getElementById("progress").innerHTML=(Math.round(100*(a.loaded/a.total)))+"%";};
+        window.applicationCache.oncached=function(){document.getElementById("progress").innerHTML="Cache almacenado exitosamente!!";setTimeout(function(){document.getElementById("progress").innerHTML="Kevin Apaga el internet, y Vuelve a abrir el navegador!!"; }, 1500);};
+        window.applicationCache.onnoupdate=function(){setTimeout(webkitExploit,500);};
+	    window.applicationCache.onerror=function(){setTimeout(webkitExploit,500);};
+
+        function allset() 
+        {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("allset").style.display = "block";
+        }
+    </script>
+    <script src="exploit.js"></script>
+</head>
+
+<body>
+    <h1 id=progress style='font-size:25px;text-align:center;text-shadow: 4px 4px 4px black;color:yellow;'></h1><br>
+    <div id="loader" class="loader">LKGames
+        <span></span>
+    </div>
+    <div id="allset" class="info" style="display:none;">Kevin . Cierre el Navegador!</div>
+</body>
+
+</html>
